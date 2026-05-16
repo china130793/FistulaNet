@@ -1,0 +1,55 @@
+{
+  "model_signature": {
+    "trainable_parameters": 15707706,
+    "modalities": 5,
+    "base_channels": 18,
+    "segmentation_heads": 7,
+    "topology_heads": 8,
+    "graph_hidden_dim": 64
+  },
+  "architecture_check_tensor_shape": [
+    1,
+    5,
+    8,
+    16,
+    16
+  ],
+  "available_output_keys": [
+    "segmentation_logits",
+    "tract_probability",
+    "secondary_probability",
+    "abscess_probability",
+    "ias_probability",
+    "eas_probability",
+    "inflammation_probability",
+    "anatomy_logits",
+    "coordinate_field",
+    "reliability_weights",
+    "centerline_logits",
+    "opening_logits",
+    "branch_logits",
+    "sphincter_crossing_logits",
+    "abscess_link_logits",
+    "topology_logits",
+    "graph_class_logits",
+    "graph_complexity",
+    "eas_involvement",
+    "branch_burden",
+    "abscess_communication_probability"
+  ],
+  "integrity_status": "model instantiated and graph-compatible output schema verified",
+  "graph_prediction_heads": {
+    "graph_class_logits": [
+      1,
+      6
+    ],
+    "graph_complexity": [
+      1,
+      1
+    ],
+    "eas_involvement": [
+      1,
+      1
+    ]
+  }
+}

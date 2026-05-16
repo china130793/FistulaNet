@@ -1,0 +1,67 @@
+{
+  "case_id": "SCPH-AFMRI-2025-01054",
+  "nodes": [
+    {
+      "id": 0,
+      "type": "internal_opening",
+      "z": 25,
+      "y": 26,
+      "x": 16,
+      "confidence": 1.0,
+      "clock_position": 7.5,
+      "radial_depth": 0.1178511306643486,
+      "eas_distance": 0.02083333395421505
+    },
+    {
+      "id": 1,
+      "type": "external_opening",
+      "z": 27,
+      "y": 33,
+      "x": 17,
+      "confidence": 1.0,
+      "clock_position": 8.385501861572266,
+      "radial_depth": 0.3952846825122833,
+      "eas_distance": 0.04658474773168564
+    },
+    {
+      "id": 2,
+      "type": "abscess_node",
+      "z": 29,
+      "y": 28,
+      "x": 11,
+      "confidence": 0.5002459092041908,
+      "clock_position": 10.228996276855469,
+      "radial_depth": 0.2083333283662796,
+      "eas_distance": -0.02083333395421505
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1,
+      "type": "primary_tract",
+      "length_mm": 7.378346698278687,
+      "tortuosity": 1.0277433551847934,
+      "crosses_eas": false,
+      "confidence": 1.0
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "type": "abscess_communication",
+      "length_mm": 8.991106717195608,
+      "tortuosity": 1.0186951354146003,
+      "crosses_eas": false,
+      "confidence": 0.5002459092041908
+    }
+  ],
+  "biomarkers": {
+    "branch_burden": 0,
+    "abscess_communication": true,
+    "horseshoe_extension": false,
+    "eas_involvement_pct": 23.986975389295594,
+    "graph_complexity_index": 0.3169769230604411,
+    "node_count": 3,
+    "edge_count": 2
+  }
+}

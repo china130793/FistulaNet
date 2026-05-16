@@ -1,0 +1,18 @@
+Variable,Training n=560,Validation n=100,Test n=160,Total n=820
+Disease status,,,,
+Primary fistula,360,60,100,520
+Recurrent or previously treated fistula,200,40,60,300
+Dominant fistula pattern,,,,
+Intersphincteric tract,190,30,50,270
+Transsphincteric tract,280,50,80,410
+Suprasphincteric / high extension,40,10,10,60
+Mixed / extrasphincteric / indeterminate dominant tract,50,10,20,80
+Additional complexity features,,,,
+Horseshoe extension,80,20,30,130
+Abscess present,180,30,60,270
+Secondary tract / branch,230,40,70,340
+Reference standard and annotation confidence,,,,
+Surgical/EUA correlation available,400,70,110,580
+Internal opening definite,330,60,100,490
+Internal opening probable,170,30,50,250
+Internal opening not confidently visible,60,10,10,80

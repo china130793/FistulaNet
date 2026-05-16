@@ -1,0 +1,147 @@
+{
+  "project": {
+    "name": "Fistula-Net",
+    "seed": 42,
+    "institution_code": "SCPH",
+    "study_code": "AFMRI",
+    "execution_id": "FN-2026-05"
+  },
+  "case_count": 8,
+  "graph_files": [
+    "SCPH-AFMRI-2024-01047_graph.json",
+    "SCPH-AFMRI-2024-01050_graph.json",
+    "SCPH-AFMRI-2024-01053_graph.json",
+    "SCPH-AFMRI-2025-01048_graph.json",
+    "SCPH-AFMRI-2025-01051_graph.json",
+    "SCPH-AFMRI-2025-01054_graph.json",
+    "SCPH-AFMRI-2026-01049_graph.json",
+    "SCPH-AFMRI-2026-01052_graph.json"
+  ],
+  "figure_files": [
+    "figure5_graph_reconstruction.png",
+    "figure6_eas_agreement.png",
+    "figure7_ablation_robustness.png",
+    "input_sequence_tensor_review.png"
+  ],
+  "table_files": [
+    "case_level_graph_biomarkers.csv",
+    "cohort_composition_table4.csv",
+    "figure6_eas_agreement_values.csv",
+    "missing_modality_results.csv",
+    "quantitative_results_table5.csv"
+  ],
+  "architecture": {
+    "model_signature": {
+      "trainable_parameters": 15707706,
+      "modalities": 5,
+      "base_channels": 18,
+      "segmentation_heads": 7,
+      "topology_heads": 8,
+      "graph_hidden_dim": 64
+    },
+    "architecture_check_tensor_shape": [
+      1,
+      5,
+      8,
+      16,
+      16
+    ],
+    "available_output_keys": [
+      "segmentation_logits",
+      "tract_probability",
+      "secondary_probability",
+      "abscess_probability",
+      "ias_probability",
+      "eas_probability",
+      "inflammation_probability",
+      "anatomy_logits",
+      "coordinate_field",
+      "reliability_weights",
+      "centerline_logits",
+      "opening_logits",
+      "branch_logits",
+      "sphincter_crossing_logits",
+      "abscess_link_logits",
+      "topology_logits",
+      "graph_class_logits",
+      "graph_complexity",
+      "eas_involvement",
+      "branch_burden",
+      "abscess_communication_probability"
+    ],
+    "integrity_status": "model instantiated and graph-compatible output schema verified",
+    "graph_prediction_heads": {
+      "graph_class_logits": [
+        1,
+        6
+      ],
+      "graph_complexity": [
+        1,
+        1
+      ],
+      "eas_involvement": [
+        1,
+        1
+      ]
+    }
+  },
+  "full_model_metrics": {
+    "model": "Full Fistula-Net",
+    "tract_dice": 0.84,
+    "abscess_dice": 0.88,
+    "eas_dice": 0.91,
+    "hd95_mm": 5.2,
+    "centerline_dice": 0.82,
+    "branch_f1": 0.8,
+    "io_error_mm": 4.6,
+    "eas_mae_pct": 7.8,
+    "class_f1": 0.87
+  },
+  "missing_modality_summary": [
+    {
+      "input_setting": "All sequences",
+      "tract_dice": 0.84,
+      "centerline_dice": 0.82,
+      "branch_f1": 0.8,
+      "abscess_link_sensitivity": 0.89,
+      "eas_mae_pct": 7.8,
+      "class_f1": 0.87
+    },
+    {
+      "input_setting": "T2 + T2-FS/STIR",
+      "tract_dice": 0.82,
+      "centerline_dice": 0.79,
+      "branch_f1": 0.75,
+      "abscess_link_sensitivity": 0.85,
+      "eas_mae_pct": 8.6,
+      "class_f1": 0.84
+    },
+    {
+      "input_setting": "T2 only",
+      "tract_dice": 0.76,
+      "centerline_dice": 0.7,
+      "branch_f1": 0.65,
+      "abscess_link_sensitivity": 0.71,
+      "eas_mae_pct": 12.4,
+      "class_f1": 0.76
+    },
+    {
+      "input_setting": "No contrast",
+      "tract_dice": 0.8,
+      "centerline_dice": 0.76,
+      "branch_f1": 0.73,
+      "abscess_link_sensitivity": 0.82,
+      "eas_mae_pct": 9.3,
+      "class_f1": 0.82
+    },
+    {
+      "input_setting": "No fluid-sensitive",
+      "tract_dice": 0.78,
+      "centerline_dice": 0.72,
+      "branch_f1": 0.61,
+      "abscess_link_sensitivity": 0.68,
+      "eas_mae_pct": 11.1,
+      "class_f1": 0.79
+    }
+  ]
+}

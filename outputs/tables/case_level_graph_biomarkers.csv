@@ -1,0 +1,9 @@
+case_id,pattern,tract_length_mm,branch_count,abscess_present,horseshoe_extension,io_clock_position,eas_involvement_pct,graph_complexity_index,node_count,edge_count
+SCPH-AFMRI-2024-01047,low_intersphincteric,10.37,0,False,False,3.05,8.61,0.05,2,1
+SCPH-AFMRI-2025-01048,transsphincteric_eas_crossing,22.0,1,False,False,7.15,7.07,0.05,2,1
+SCPH-AFMRI-2026-01049,abscess_associated_branching,26.46,2,True,False,8.88,9.53,0.255,3,2
+SCPH-AFMRI-2024-01050,horseshoe_recurrent,31.92,2,True,True,4.91,25.83,0.317,3,2
+SCPH-AFMRI-2025-01051,low_intersphincteric,6.88,0,False,False,5.18,11.07,0.043,2,1
+SCPH-AFMRI-2026-01052,transsphincteric_eas_crossing,26.93,1,False,False,3.85,19.37,0.104,2,1
+SCPH-AFMRI-2024-01053,abscess_associated_branching,30.76,2,True,False,2.76,11.99,0.296,3,2
+SCPH-AFMRI-2025-01054,horseshoe_recurrent,32.07,2,True,True,7.12,23.99,0.317,3,2

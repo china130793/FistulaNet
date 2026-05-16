@@ -1,0 +1,47 @@
+{
+  "case_id": "SCPH-AFMRI-2025-01048",
+  "nodes": [
+    {
+      "id": 0,
+      "type": "internal_opening",
+      "z": 23,
+      "y": 27,
+      "x": 18,
+      "confidence": 1.0,
+      "clock_position": 7.228996753692627,
+      "radial_depth": 0.2083333283662796,
+      "eas_distance": 0.02083333395421505
+    },
+    {
+      "id": 1,
+      "type": "external_opening",
+      "z": 28,
+      "y": 36,
+      "x": 20,
+      "confidence": 1.0,
+      "clock_position": 8.114498138427734,
+      "radial_depth": 0.55901700258255,
+      "eas_distance": 0.13339842855930328
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1,
+      "type": "primary_tract",
+      "length_mm": 10.571660229122008,
+      "tortuosity": 1.035068367421627,
+      "crosses_eas": false,
+      "confidence": 1.0
+    }
+  ],
+  "biomarkers": {
+    "branch_burden": 0,
+    "abscess_communication": false,
+    "horseshoe_extension": false,
+    "eas_involvement_pct": 7.073082486587163,
+    "graph_complexity_index": 0.05029131308984701,
+    "node_count": 2,
+    "edge_count": 1
+  }
+}

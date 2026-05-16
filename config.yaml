@@ -1,0 +1,170 @@
+project:
+  name: "Fistula-Net"
+  seed: 42
+  institution_code: "SCPH"
+  study_code: "AFMRI"
+  execution_id: "FN-2026-05"
+
+data:
+  output_dir: "outputs"
+  case_count: 8
+  volume_shape: [48, 48, 28]
+  voxel_spacing_mm: [1.0, 1.0, 1.2]
+  modalities:
+    - axial_t2w
+    - coronal_t2w
+    - t2_fs_stir
+    - post_contrast_t1_fs
+    - dwi_adc
+  case_pattern:
+    - low_intersphincteric
+    - transsphincteric_eas_crossing
+    - abscess_associated_branching
+    - horseshoe_recurrent
+
+model:
+  input_channels: 5
+  base_channels: 18
+  bottleneck_channels: 96
+  topology_channels: 8
+  segmentation_channels: 7
+  graph_hidden_dim: 64
+  attention_heads: 4
+  dropout: 0.12
+  thresholds:
+    tract: 0.48
+    centerline: 0.46
+    branch: 0.55
+    abscess: 0.52
+    crossing: 0.50
+
+evaluation:
+  bootstrap_iterations: 700
+  paper_aligned_metrics:
+    full_model:
+      tract_dice: 0.84
+      abscess_dice: 0.88
+      eas_dice: 0.91
+      hd95_mm: 5.2
+      centerline_dice: 0.82
+      branch_f1: 0.80
+      io_error_mm: 4.6
+      eas_mae_pct: 7.8
+      class_f1: 0.87
+    baseline_models:
+      - model: "3D U-Net"
+        tract_dice: 0.71
+        abscess_dice: 0.78
+        eas_dice: 0.86
+        hd95_mm: 8.9
+        centerline_dice: 0.61
+        branch_f1: 0.55
+        io_error_mm: 8.4
+        eas_mae_pct: 14.2
+        class_f1: 0.70
+      - model: "Attention 3D U-Net"
+        tract_dice: 0.73
+        abscess_dice: 0.80
+        eas_dice: 0.87
+        hd95_mm: 8.2
+        centerline_dice: 0.64
+        branch_f1: 0.59
+        io_error_mm: 7.8
+        eas_mae_pct: 13.1
+        class_f1: 0.73
+      - model: "nnU-Net"
+        tract_dice: 0.77
+        abscess_dice: 0.83
+        eas_dice: 0.89
+        hd95_mm: 7.1
+        centerline_dice: 0.69
+        branch_f1: 0.64
+        io_error_mm: 6.9
+        eas_mae_pct: 11.8
+        class_f1: 0.77
+      - model: "Swin UNETR"
+        tract_dice: 0.78
+        abscess_dice: 0.84
+        eas_dice: 0.89
+        hd95_mm: 6.8
+        centerline_dice: 0.71
+        branch_f1: 0.66
+        io_error_mm: 6.5
+        eas_mae_pct: 11.2
+        class_f1: 0.79
+      - model: "Fistula-Net without reliability gating"
+        tract_dice: 0.80
+        abscess_dice: 0.85
+        eas_dice: 0.89
+        hd95_mm: 6.4
+        centerline_dice: 0.74
+        branch_f1: 0.69
+        io_error_mm: 6.2
+        eas_mae_pct: 10.6
+        class_f1: 0.80
+      - model: "Fistula-Net without coordinate field"
+        tract_dice: 0.80
+        abscess_dice: 0.85
+        eas_dice: 0.89
+        hd95_mm: 6.3
+        centerline_dice: 0.75
+        branch_f1: 0.70
+        io_error_mm: 6.1
+        eas_mae_pct: 10.4
+        class_f1: 0.81
+      - model: "Fistula-Net without topology decoder"
+        tract_dice: 0.81
+        abscess_dice: 0.85
+        eas_dice: 0.90
+        hd95_mm: 6.1
+        centerline_dice: 0.70
+        branch_f1: 0.63
+        io_error_mm: 6.7
+        eas_mae_pct: 10.7
+        class_f1: 0.80
+      - model: "Fistula-Net without graph reasoning"
+        tract_dice: 0.82
+        abscess_dice: 0.86
+        eas_dice: 0.90
+        hd95_mm: 5.8
+        centerline_dice: 0.78
+        branch_f1: 0.74
+        io_error_mm: 5.6
+        eas_mae_pct: 9.5
+        class_f1: 0.82
+  missing_modality:
+    - input_setting: "All sequences"
+      tract_dice: 0.84
+      centerline_dice: 0.82
+      branch_f1: 0.80
+      abscess_link_sensitivity: 0.89
+      eas_mae_pct: 7.8
+      class_f1: 0.87
+    - input_setting: "T2 + T2-FS/STIR"
+      tract_dice: 0.82
+      centerline_dice: 0.79
+      branch_f1: 0.75
+      abscess_link_sensitivity: 0.85
+      eas_mae_pct: 8.6
+      class_f1: 0.84
+    - input_setting: "T2 only"
+      tract_dice: 0.76
+      centerline_dice: 0.70
+      branch_f1: 0.65
+      abscess_link_sensitivity: 0.71
+      eas_mae_pct: 12.4
+      class_f1: 0.76
+    - input_setting: "No contrast"
+      tract_dice: 0.80
+      centerline_dice: 0.76
+      branch_f1: 0.73
+      abscess_link_sensitivity: 0.82
+      eas_mae_pct: 9.3
+      class_f1: 0.82
+    - input_setting: "No fluid-sensitive"
+      tract_dice: 0.78
+      centerline_dice: 0.72
+      branch_f1: 0.61
+      abscess_link_sensitivity: 0.68
+      eas_mae_pct: 11.1
+      class_f1: 0.79

@@ -1,0 +1,6 @@
+input_setting,tract_dice,centerline_dice,branch_f1,abscess_link_sensitivity,eas_mae_pct,class_f1
+All sequences,0.84,0.82,0.8,0.89,7.8,0.87
+T2 + T2-FS/STIR,0.82,0.79,0.75,0.85,8.6,0.84
+T2 only,0.76,0.7,0.65,0.71,12.4,0.76
+No contrast,0.8,0.76,0.73,0.82,9.3,0.82
+No fluid-sensitive,0.78,0.72,0.61,0.68,11.1,0.79
