@@ -73,7 +73,6 @@ The command writes the following artifacts:
 outputs/figures/figure5_graph_reconstruction.png
 outputs/figures/figure6_eas_agreement.png
 outputs/figures/figure7_ablation_robustness.png
-outputs/figures/input_sequence_tensor_review.png
 outputs/tables/cohort_composition_table4.csv
 outputs/tables/quantitative_results_table5.csv
 outputs/tables/missing_modality_results.csv
