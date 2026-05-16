@@ -1,15 +1,3 @@
-"""
-Graph, metric, case-level biomarker, and figure utilities for Fistula-Net.
-
-This module avoids hardcoded experimental result values. Cohort summaries, paper
-metrics, EAS agreement values, missing-modality results, and case records must be
-provided as CSV/JSON/config inputs or computed from supplied tensors and graph
-outputs.
-
-Fixed text such as axis labels, figure panel labels, and column names is retained
-because it defines output format, not numerical results.
-"""
-
 from __future__ import annotations
 
 import json
